@@ -6,7 +6,7 @@ from .models import TodoItem
 
 def todoView(request):
 	todoItems = TodoItem.objects.all()
-	return render(request, 'todo.html', 
+	return render(request, 'todo/todo.html', 
 		{'all_items': todoItems})
 
 def addTodo(request):
