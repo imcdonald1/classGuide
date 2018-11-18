@@ -15,6 +15,11 @@ h1
   list-style-type: none;
 }
 
+.serchRedirect
+{
+  text-align: center;
+}
+
 .sidebar
 {
   grid-area: sidebar;
