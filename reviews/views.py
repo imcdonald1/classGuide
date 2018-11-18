@@ -44,9 +44,9 @@ def reviewSearch(request):
 		#comeplete search and render search results
 		form = searchReviews(request.POST)
 		form.is_valid()
+		x = None
 		if form.has_changed():
 			x = Review.objects.all()
-			print(x)
 			if 'className' in form.changed_data:
 				x = x.filter(className=form.cleaned_data['className'])
 			if 'courseNum' in form.changed_data:
@@ -55,6 +55,7 @@ def reviewSearch(request):
 				x = x.filter(courseSubject=form.cleaned_data['courseSubject'])
 			if 'school' in form.changed_data:
 				x = x.filter(school=form.cleaned_data['school'])
+				
 		return render(request, 'reviews/results.html', {'results': x})
 	else:
 		form = searchReviews()
