@@ -1,6 +1,6 @@
 body
 {
-  margin: 40px;
+  margin: 0px;
 }
 
 h1
@@ -16,6 +16,11 @@ h2
 h3
 {
   text-align: center;
+}
+
+#profileLink
+{
+  float: right;
 }
 
 #reviewList
@@ -34,7 +39,7 @@ h3
 {
   grid-column: 2/5;
   text-align: center;
-   background-color: #999;
+  
 }
 
 .wrapper 
@@ -62,3 +67,33 @@ h3
   text-align: center;
   grid-column: 1/5;
 }
+
+
+.topnav 
+{
+  overflow: hidden;
+  background-color: #999;
+}
+
+.topnav a 
+{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover 
+{
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active 
+{
+  background-color: #333;
+  color: white;
+}
+
