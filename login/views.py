@@ -19,7 +19,7 @@ def loginPage(request):
 	else:
 		form = UserForm()
 
-	return render(request, 'login.html', {'form': form})
+	return render(request, 'login/login.html', {'form': form})
 
 
 def createUser(request):
@@ -34,7 +34,7 @@ def createUser(request):
 	else:
 		form = createUserForm()
 	
-	return render(request, 'createUser.html', {'form': form})
+	return render(request, 'login/createUser.html', {'form': form})
 
 def createUserRedirect(request):
 	return HttpResponseRedirect('/createUser/')
