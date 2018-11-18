@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from todo.views import todoView, addTodo, deleteTodo
-from login.views import loginPage, createUser
+from login.views import loginPage, createUser, createUserRedirect
 from reviews.views import home, createReview, reviewSearch
 from django.conf.urls.static import static
 from django.conf import settings
@@ -31,5 +31,6 @@ urlpatterns = [
     path('createUser/', createUser),
     path('createReview/',createReview),
     path('reviewSearch/', reviewSearch),
+    path('createUserRedirect/', createUserRedirect),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
