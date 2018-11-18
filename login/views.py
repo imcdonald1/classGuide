@@ -11,7 +11,6 @@ def loginPage(request):
 		form.is_valid()
 		tempUser = User.objects.get(username=form.cleaned_data['username'])
 		user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-		print(user)
 		if user is not None:
 			login(request, user)
 			request.session['member_id'] = user.id
@@ -27,7 +26,6 @@ def createUser(request):
 	if request.method == 'POST':
 		form = createUserForm(request.POST)
 		form.is_valid()
-		#create new user
 		newUser =  User(username=form.cleaned_data['username'], password=form.cleaned_data['password'], 
 						email=form.cleaned_data['email'], first_name=form.cleaned_data['first_name'], last_name=form.cleaned_data['last_name'])
 		newUser.save()
@@ -37,3 +35,6 @@ def createUser(request):
 		form = createUserForm()
 	
 	return render(request, 'createUser.html', {'form': form})
+
+def createUserRedirect(request):
+	return HttpResponseRedirect('/createUser/')
