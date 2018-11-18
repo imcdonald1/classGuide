@@ -5,9 +5,9 @@ from .models import TodoItem
 # Create your views here.
 
 def todoView(request):
-	all_todo_items = TodoItem.objects.all()
+	todoItems = TodoItem.objects.all()
 	return render(request, 'todo.html', 
-		{'all_items': all_todo_items})
+		{'all_items': todoItems})
 
 def addTodo(request):
 	new_item =  TodoItem(content = request.POST['content'])
