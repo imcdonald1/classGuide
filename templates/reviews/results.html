@@ -27,5 +27,8 @@
 				</li>
 				{% endfor %}
 			</ul>
+			<form action="/serchRedirect/" method="POST" class="serchRedirect">{% csrf_token %}
+			<a href="#" onclick="document.serchRedirect.submit();">Search Again.</a>
+		</form>
 	</body>
 </html>
