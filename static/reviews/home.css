@@ -46,7 +46,7 @@ h3
 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(30px, auto);
   padding: 1em;
   grid-gap: 3px;
 }
@@ -71,6 +71,8 @@ h3
 
 .topnav 
 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   overflow: hidden;
   background-color: #999;
 }
@@ -97,3 +99,30 @@ h3
   color: white;
 }
 
+.mainPage
+{
+  background-color: white;
+}
+
+.navLinks
+{
+  grid-column: 1/2;
+}
+
+.navSearch
+{
+  grid-column: 2/4;
+}
+
+.navUser
+{
+  grid-column: 4/5;
+}
+
+.navSearchInput
+{
+  margin-left: 0em;
+  text-align: left;
+  margin-top: 1em;
+  text-decoration: none;
+}
