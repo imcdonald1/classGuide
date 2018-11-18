@@ -25,38 +25,25 @@ h3
   list-style-type: none;
 }
 
-.sidebar
+.reviewSidebar
 {
-  grid-area: sidebar;
+  grid-column: 1/2;
 }
 
-.content
+.reviewContent
 {
-  grid-area: content;
+  grid-column: 2/5;
   text-align: center;
-}
-
-.header
-{
-  grid-area: header;
-}
-
-.footer {
-  grid-area: footer;
+   background-color: #999;
 }
 
 .wrapper 
 {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 220px 220px 220px;
-  grid-template-areas:
-  "header header header"
-  "sidebar content content"
-  "sidebar  content  content";
-  background-color: #fff;
-  color: #444;
-  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 1em;
+  grid-gap: 3px;
 }
 
 
@@ -69,12 +56,9 @@ h3
   font-size: 150%;
 }
 
-.header
+.reviewHeader
 {
   background-color: #999;
   text-align: center;
-}
-.footer 
-{
-  background-color: #999;
+  grid-column: 1/5;
 }
