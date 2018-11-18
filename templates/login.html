@@ -15,9 +15,9 @@
 			</table>
 			<input type="submit" value="Login">
 		</form>
-		<p>
-			<a>Need an acount? Click Here.</a>
-		</p>
+		<form action="/createUserRedirect/" method="POST" name="createUserRedirect">{% csrf_token %}
+			<a href="#" onclick="document.createUserRedirect.submit();">Need an acount? Click Here.</a>
+		</form>
 	</div>
 </body>
 </html>
