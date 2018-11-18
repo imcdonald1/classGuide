@@ -1,0 +1,21 @@
+.border
+{
+	padding: 50px;
+	border: thin;
+	border-style: solid;
+	background-image: linear-gradient(to bottom, #787eea, #9e9bef, #bfbaf3, #dedaf7, #fbfbfb);
+	padding-top: 40px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.createReview
+{
+	display: inline-block;
+}
+
+.reviewSearch
+{
+	display: inline-block;
+}
