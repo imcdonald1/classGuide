@@ -9,13 +9,20 @@
 		<div>
 			<h1>Login Landing Page (Home)</h1>
 			<h2> Welcome {{username}}!</h2>
-			<ul>
+			<h3>Your Past Reviews</h3>
+			<ul id="reviewList">
 				{% for review in reviews %}
 				<li>
 					<div class="review">
 						<div class="wrapper">
 							<div class="box header">{{review.reviewerName}}'s review of {{review.className}}</div>
-							<div class="box sidebar">Sidebar</div>
+							<div class="box sidebar">
+								<ul>
+									<li>{{review.school}}</li>
+									<li>{{review.courseSubject}} {{review.courseNum}}</li>
+									<li>{{review.termTaken}}</li>
+								</ul>
+							</div>
 							<div class="box content">{{review.review}}</div>
 						</div>
 					</div>
