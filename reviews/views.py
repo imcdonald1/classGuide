@@ -13,10 +13,10 @@ def home(request):
 		currentUserID = request.user.id
 		reviews = Review.objects.filter(userID=currentUserID)
 		
-		return render(request, 'home.html', {'username': request.user.username,
+		return render(request, 'reviews/home.html', {'username': request.user.username,
 			'reviews': reviews})
 
-	return render(request, 'home.html', {'username': request.user.username})
+	return render(request, 'reviews/home.html', {'username': request.user.username})
 
 
 @login_required
@@ -37,7 +37,7 @@ def createReview(request):
 	else:
 		form = createReviewForm()
 	
-	return render(request, 'createReview.html', {'form': form})
+	return render(request, 'reviews/createReview.html', {'form': form})
 
 def reviewSearch(request):
 	if request.method == 'POST':
@@ -55,11 +55,11 @@ def reviewSearch(request):
 				x = x.filter(courseSubject=form.cleaned_data['courseSubject'])
 			if 'school' in form.changed_data:
 				x = x.filter(school=form.cleaned_data['school'])
-		return render(request, 'results.html', {'results': x})
+		return render(request, 'reviews/results.html', {'results': x})
 	else:
 		form = searchReviews()
 
-	return render(request, 'search.html', {'form': form})
+	return render(request, 'reviews/search.html', {'form': form})
 
 def serchRedirect(request):
 	return HttpResponseRedirect('/reviewSearch/')
