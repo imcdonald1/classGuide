@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Login</title>
+	<meta charset="UTF-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login/loginPage.css' %}"> 
+</head>
+<body class="content">
+	<div class="border">
+		<h1> Welcome User! </h1>
+		<form action="/loginPage/" method="post" class="loginForm">{% csrf_token %}
+			<table>
+				{{ form }}
+			</table>
+			<input type="submit" value="Login">
+		</form>
+		<form action="/createUserRedirect/" method="POST" name="createUserRedirect">{% csrf_token %}
+			<a href="#" onclick="document.createUserRedirect.submit();">Need an acount? Click Here.</a>
+		</form>
+	</div>
+</body>
+</html>

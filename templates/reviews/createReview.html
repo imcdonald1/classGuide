@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Creation</title>
+	<meta charset="UTF-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/reviews.css' %}"> 
+</head>
+<body class="content">
+	<div class="border">
+		<h1> Create New Review </h1>
+		<form action="/createReview/" method="post" class="createReview">{% csrf_token %}
+			<table>
+				{{ form }}
+			</table>
+			<input type="submit" value="Create">
+		</form>
+	</div>
+</body>
+</html>

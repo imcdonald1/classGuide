@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Search</title>
+	<meta charset="UTF-8">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/reviews.css' %}"> 
+</head>
+<body class="content">
+	<div class="border">
+		<h1>Search</h1>
+		<form action="/reviewSearch/" method="post" class="reviewSearch">{% csrf_token %}
+			<table>
+				{{ form }}
+			</table>
+			<input type="submit" value="Search">
+		</form>
+	</div>
+</body>
+</html>

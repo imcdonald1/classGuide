@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'reviews/results.css' %}"> 
+	</head>
+	<body>
+		<div>
+			<h1>Results</h1>
+			<ul id="resultList">
+				{% for result in results %}
+				<li>
+					<div>
+						<div class="wrapper">
+							<div class="box header">{{result.reviewerName}}'s review of {{result.className}}</div>
+							<div class="box sidebar">
+								<ul>
+									<li>{{result.school}}</li>
+									<li>{{result.courseSubject}} {{result.courseNum}}</li>
+									<li>{{result.termTaken}}</li>
+								</ul>
+							</div>
+							<div class="box content">{{result.review}}</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+	</body>
+</html>
