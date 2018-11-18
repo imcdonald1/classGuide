@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Home</title>
-		{% load static %}
-		<link rel="stylesheet" type="text/css" href="{% static 'reviews/home.css' %}"> 
-	</head>
-	<body>
-		<div>
-			<h1>Login Landing Page (Home)</h1>
-			<h2> Welcome {{username}}!</h2>
-			<h3>Your Past Reviews</h3>
-			<ul id="reviewList">
-				{% for review in reviews %}
-				<li>
-					<div>
-						<div class="wrapper">
-							<div class="box header">{{review.reviewerName}}'s review of {{review.className}}</div>
-							<div class="box sidebar">
-								<ul>
-									<li>{{review.school}}</li>
-									<li>{{review.courseSubject}} {{review.courseNum}}</li>
-									<li>{{review.termTaken}}</li>
-								</ul>
-							</div>
-							<div class="box content">{{review.review}}</div>
-						</div>
+<head>
+	<title>Home</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/home.css' %}"> 
+</head>
+<body>
+	<div>
+		<h1>Login Landing Page (Home)</h1>
+		<h2> Welcome {{username}}!</h2>
+		<h3>Your Past Reviews</h3>
+		<ul id="reviewList">
+			{% for review in reviews %}
+			<li>
+				<div class="wrapper">
+					<div class="box reviewHeader">{{review.reviewerName}}'s review of {{review.className}}		
 					</div>
-				</li>
-				{% endfor %}
-			</ul>
-	</body>
+					<div class="box reviewSidebar">
+						<ul>
+							<li>{{review.school}}</li>
+							<li>{{review.courseSubject}} {{review.courseNum}}</li>
+							<li>{{review.termTaken}}</li>
+						</ul>
+					</div>
+					<div class="box reviewContent">
+						{{review.review}}
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+</body>
 </html>
+
