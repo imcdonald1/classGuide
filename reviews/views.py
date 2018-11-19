@@ -33,11 +33,9 @@ def createReview(request):
 							reviewerName=request.user.username)
 		newReview.save()
 		return HttpResponseRedirect('/home/')
-	
 	else:
 		form = createReviewForm()
-	
-	return render(request, 'reviews/createReview.html', {'form': form})
+	return render(request, 'reviews/createReview.html', {'form': form, 'username': request.user.username})
 
 def reviewSearch(request):
 	if request.method == 'POST':
