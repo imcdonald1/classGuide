@@ -5,9 +5,10 @@
 	border-style: solid;
 	background-image: linear-gradient(to bottom, #787eea, #9e9bef, #bfbaf3, #dedaf7, #fbfbfb);
 	padding-top: 40px;
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  margin-top: 3em;
 }
 
 .loginForm
