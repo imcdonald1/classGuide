@@ -1,3 +1,13 @@
+body
+{
+	margin: 0px;
+}
+
+#profileLink
+{
+	float: right;
+}
+
 .border
 {
 	padding: 50px;
@@ -8,6 +18,7 @@
     max-width: 500px;
     margin: auto;
     text-align: center;
+    margin-top: 3em;
 }
 
 .createReview
@@ -18,4 +29,57 @@
 .reviewSearch
 {
 	display: inline-block;
+}
+
+.topnav 
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow: hidden;
+  background-color: #999;
+}
+
+.topnav a 
+{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover 
+{
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active 
+{
+  background-color: #333;
+  color: white;
+}
+
+.navLinks
+{
+  grid-column: 1/2;
+}
+
+.navSearch
+{
+  grid-column: 2/4;
+}
+
+.navUser
+{
+  grid-column: 4/5;
+}
+
+.navSearchInput
+{
+  margin-left: 0em;
+  text-align: left;
+  margin-top: 1em;
+  text-decoration: none;
 }
