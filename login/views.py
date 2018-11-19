@@ -19,6 +19,9 @@ def loginPage(request):
 	else:
 		form = UserForm()
 
+	if request.user.is_authenticated:
+		return HttpResponseRedirect('/home/')
+
 	return render(request, 'login/login.html', {'form': form})
 
 
