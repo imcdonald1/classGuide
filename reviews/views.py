@@ -55,12 +55,12 @@ def reviewSearch(request):
 				x = x.filter(courseSubject=form.cleaned_data['courseSubject'])
 			if 'school' in form.changed_data:
 				x = x.filter(school=form.cleaned_data['school'])
-				
-		return render(request, 'reviews/results.html', {'results': x})
+
+		return render(request, 'reviews/results.html', {'results': x, 'username': request.user.username})
 	else:
 		form = searchReviews()
 
-	return render(request, 'reviews/search.html', {'form': form})
+	return render(request, 'reviews/search.html', {'form': form, 'username': request.user.username})
 
 def serchRedirect(request):
 	return HttpResponseRedirect('/reviewSearch/')
