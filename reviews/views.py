@@ -62,3 +62,9 @@ def reviewSearch(request):
 
 def serchRedirect(request):
 	return HttpResponseRedirect('/reviewSearch/')
+
+def schoolSearch(request):
+	if request.method == 'POST':
+		x = Review.objects.filter(school__iexact=request.POST['search'])
+		return render(request, 'reviews/results.html', {'results': x, 'username': request.user.username})
+	return HttpResponseRedirect('/home/')
