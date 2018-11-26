@@ -19,7 +19,7 @@ def home(request):
 	return render(request, 'reviews/home.html', {'username': request.user.username})
 
 
-@login_required
+@login_required 
 def createReview(request):
 	if request.method == 'POST':
 		form = createReviewForm(request.POST)
